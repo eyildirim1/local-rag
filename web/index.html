@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Belge Soru-Cevap</title>
+  <script>
+    if (window.location.protocol === "file:") {
+      window.location.replace("http://127.0.0.1:8000/");
+    }
+  </script>
+  <link rel="stylesheet" href="/styles.css?v=5">
+</head>
+<body>
+  <header><h1>Belge Soru-Cevap</h1></header>
+
+  <div class="layout">
+    <aside>
+      <h2>Belge yükle</h2>
+
+      <form id="upload-form" method="post" action="/api/ingest" enctype="multipart/form-data">
+        <input id="file-input" name="files" type="file" accept=".pdf,.txt,.md" multiple required>
+        <button id="upload-button" type="submit">İndeksle</button>
+      </form>
+
+      <p id="upload-message" aria-live="polite"></p>
+
+      <div class="list-title">
+        <h2>Eklenen belgeler</h2>
+        <button id="clear-button" type="button">Temizle</button>
+      </div>
+      <div id="document-list"><p class="muted">Yükleniyor...</p></div>
+    </aside>
+
+    <main>
+      <div id="messages">
+        <div id="empty-message">
+          <h2>Belge hakkında soru sorun</h2>
+          <p>Yanıtlar yalnızca eklediğiniz belgelerden hazırlanır.</p>
+        </div>
+      </div>
+
+      <form id="question-form">
+        <textarea id="question" rows="2" placeholder="Sorunuzu yazın..." required></textarea>
+        <button id="send-button" type="submit">Gönder</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/app.js?v=5"></script>
+</body>
+</html>
