@@ -1,6 +1,6 @@
 # Gerçek Soru Değerlendirmesi
 
-Değerlendirme 24 Ağustos 2026 tarihinde, `tests/documents/` içindeki `Mole Concept.pdf` ve `W2-The Mole.pdf` belgeleri üzerinde yapıldı. Test betiği temiz ve geçici bir SQLite veritabanı oluşturdu; PDF'leri sırasıyla 10 ve 5 parça olarak otomatik indeksledi. `RAG_BACKEND=foundry` zorunlu olarak seçildi; embedding için `qwen3-embedding-0.6b`, yanıt üretimi için `phi-3.5-mini` kullanıldı. Modeller önceden belleğe yüklendi ve her soru ayrı ayrı süre ölçülerek çalıştırıldı.
+Değerlendirme `tests/documents/` içindeki `Mole Concept.pdf` ve `W2-The Mole.pdf` belgeleri üzerinde yapıldı. Test betiği temiz ve geçici bir SQLite veritabanı oluşturdu; PDF'leri sırasıyla 10 ve 5 parça olarak otomatik indeksledi. `RAG_BACKEND=foundry` zorunlu olarak seçildi; embedding için `qwen3-embedding-0.6b`, yanıt üretimi için `phi-3.5-mini` kullanıldı. Modeller önceden belleğe yüklendi ve her soru ayrı ayrı süre ölçülerek çalıştırıldı.
 
 Başarı ölçütü cevaplanabilir sorularda beklenen bilginin ve en az bir kaynağın bulunmasıdır. Cevaplanamaz sorularda yanıtın tam olarak `Bu bilgi yüklenen belgelerde bulunmuyor.` olması beklenmiştir.
 
